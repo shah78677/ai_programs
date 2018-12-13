@@ -12,6 +12,7 @@ import random
 # Create the environment with two locations A and B
 # Assign values 1 or 0 randomly to the locations
 # 0 means clean and 1 means dirty
+
 class Environment(object):
     def __init__(self):
         self.locationCondition = {'A':'0', 'B':'0'}
