@@ -26,16 +26,16 @@ def capitalize_word_in_crossword(crosswords, words):
     for rownum, row in enumerate(crosswords):
         for word in words:
             find_index=''.join(row).lower().find(word)
-            if find_index > 0:
-                for i in range(find_index, len(word) + 1):
+            if find_index >= 0:
+                for i in range(find_index, find_index+len(word)):
                     crosswords[rownum][i] = crosswords[rownum][i].upper()
 
     for colindex in range(len(crosswords[0])):
         for word in words:
             colvalues=[row[colindex] for row in crosswords]
             find_index=''.join(colvalues).lower().find(word)
-            if find_index > 0:
-                for i in range(find_index, len(word) + 1):
+            if find_index >= 0:
+                for i in range(find_index, find_index+len(word)):
                     crosswords[i][colindex] = crosswords[i][colindex].upper()
     return crosswords
 
